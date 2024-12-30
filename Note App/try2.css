@@ -1,0 +1,79 @@
+body {
+    background-image: linear-gradient(100deg, #0d0e0d, rgb(34, 34, 34));
+    direction: rtl;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    cursor: pointer;
+    background-color: darkorange;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+    will-change: transform;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+div i {
+    visibility: hidden;
+    font-size: 20px;
+    color: brown;
+    transform: rotate(50deg);
+    will-change: transform;
+}
+
+.move {
+    position: relative;
+    animation: move .5s forwards;
+}
+
+@keyframes move {
+    0% {
+        transform: scale(1) translate(0, -50px) rotate(50deg);
+    }
+    50% {
+        transform: scale(.9) translate(0, 0) rotate(50deg);
+    }
+    100% {
+        transform: scale(1) translate(0, 0) rotate(50deg);
+    }
+}
+
+.stop {
+    animation: stop .5s;
+}
+@keyframes stop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+div input {
+    width: 50%;
+    border-bottom: 1px dashed rgb(0, 0, 0);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: rgb(255, 217, 0);
+    margin: 50px;
+    outline: none;
+    color: #000000;
+    font-family: system-ui;
+    font-size: 18px;
+    font-weight: 600;
+}
+div input:focus {
+    transition: .5s;
+    width: 100%;
+}
+
